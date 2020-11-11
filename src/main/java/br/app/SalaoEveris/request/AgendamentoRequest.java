@@ -15,8 +15,6 @@ public class AgendamentoRequest {
 
 	private Date data;
 
-	
-
 	public Date getData() {
 		return data;
 	}

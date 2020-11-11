@@ -33,32 +33,30 @@ public class ServicoController extends BaseController {
 			return ResponseEntity.status(errorBase.getStatuscode()).body(errorBase);
 		}
 	}
-	
-	
-	@GetMapping(path = "/{id}")
-    public ResponseEntity obter(@PathVariable Long id) {
-        try {
 
-           ServicoResponse response = service.obter(id);
-            return ResponseEntity.status(response.getStatuscode()).body(response);
-        } catch (Exception e) {
-            return ResponseEntity.status(errorBase.getStatuscode()).body(errorBase);
-        }
-    }
-	
-	 @GetMapping
-	    public ResponseEntity listar() {
-		 
-		 
-	        try {
-	            ServicoListResponse response = service.listar();
-	            
-	            return ResponseEntity.status(response.getStatuscode()).body(response);
-	            
-	        } catch (Exception e) {
-	        	
-	            return ResponseEntity.status(errorBase.getStatuscode()).body(errorBase);
-	        }
-	    }
+	@GetMapping(path = "/{id}")
+	public ResponseEntity obter(@PathVariable Long id) {
+		try {
+
+			ServicoResponse response = service.obter(id);
+			return ResponseEntity.status(response.getStatuscode()).body(response);
+		} catch (Exception e) {
+			return ResponseEntity.status(errorBase.getStatuscode()).body(errorBase);
+		}
+	}
+
+	@GetMapping
+	public ResponseEntity listar() {
+
+		try {
+			ServicoListResponse response = service.listar();
+
+			return ResponseEntity.status(response.getStatuscode()).body(response);
+
+		} catch (Exception e) {
+
+			return ResponseEntity.status(errorBase.getStatuscode()).body(errorBase);
+		}
+	}
 
 }

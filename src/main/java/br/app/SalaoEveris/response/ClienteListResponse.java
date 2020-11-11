@@ -6,12 +6,7 @@ import br.app.SalaoEveris.model.Cliente;
 
 public class ClienteListResponse extends BaseResponse {
 
-
-	
-	
-	private List  <ClienteResponse> Clientes;
-	
-	
+	private List<ClienteResponse> Clientes;
 
 	public List<ClienteResponse> getClientes() {
 		return Clientes;
@@ -20,16 +15,5 @@ public class ClienteListResponse extends BaseResponse {
 	public void setClientes(List<ClienteResponse> clientes) {
 		Clientes = clientes;
 	}
-	
-	
-	
-	
-	
 
-	
-		
-	}
-	
-	
-
-
+}

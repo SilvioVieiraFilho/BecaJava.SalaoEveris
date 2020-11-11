@@ -6,19 +6,15 @@ import java.util.Date;
 import br.app.SalaoEveris.model.Cliente;
 import br.app.SalaoEveris.model.Servico;
 
-public class AgendamentoResponse extends BaseResponse{
-	
-	
-	Long  id;
-	
-	
+public class AgendamentoResponse extends BaseResponse {
+
+	Long id;
+
 	private Date data;
-	
+
 	private Servico servico;
-	
+
 	private Cliente cliente;
-	
-	
 
 	public Long getId() {
 		return id;
@@ -51,9 +47,5 @@ public class AgendamentoResponse extends BaseResponse{
 	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
 	}
-	
-	
-	
-	
 
 }

@@ -9,20 +9,20 @@
 		<version>2.3.5.RELEASE</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>br.app</groupId>
-	<artifactId>BancoEveris</artifactId>
+	<groupId>br.salao</groupId>
+	<artifactId>demo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>BancoEveris</name>
+	<name>salao de beleza</name>
 	<description>Demo project for Spring Boot</description>
 	
-	<repositories>
+<repositories>
         <repository>
           <id>jcenter-snapshots</id>
           <name>jcenter</name>
           <url>https://jcenter.bintray.com/</url>
         </repository>
+        
     </repositories>
-
 	<properties>
 		<java.version>11</java.version>
 	</properties>
@@ -33,31 +33,13 @@
 			<artifactId>springfox-swagger2</artifactId>
 			<version>2.9.2</version>
 		</dependency>
-	
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-security</artifactId>
-		</dependency>
-		
-		
-		
-		<dependency>
-    <groupId>javax.validation</groupId>
-    <artifactId>validation-api</artifactId>
-    <version>1.1.0.Final</version>
-    </dependency>
-
-<dependency>
-    <groupId>br.com.caelum.stella</groupId>
-    <artifactId>caelum-stella-hibernate-validator</artifactId>
-    <version>1.2</version>
-</dependency>
 
 		<dependency>
 			<groupId>io.springfox</groupId>
 			<artifactId>springfox-swagger-ui</artifactId>
 			<version>2.9.2</version>
 		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -68,12 +50,17 @@
 		</dependency>
 
 		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
 			<groupId>com.microsoft.sqlserver</groupId>
 			<artifactId>mssql-jdbc</artifactId>
 			<scope>runtime</scope>
 		</dependency>
-		
-		
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -85,9 +72,20 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-		
-		
-		
+
+
+		<dependency>
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt</artifactId>
+			<version>0.9.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt</artifactId>
+			<version>0.7.0</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>

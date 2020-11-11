@@ -13,7 +13,7 @@ import br.app.SalaoEveris.request.ServicoRequest;
 import br.app.SalaoEveris.response.*;
 
 @Service
-public class ServicoService{
+public class ServicoService {
 
 	@Autowired
 
@@ -28,6 +28,13 @@ public class ServicoService{
 
 		if (servicoRequest.getNome() == "") {
 			base.message = "Nome do serviço não informado!";
+			base.statuscode = 400;
+			return base;
+
+		}
+
+		if (servicoRequest.getValor() == 0) {
+			base.message = "Valor incorreto tente novamente";
 			base.statuscode = 400;
 			return base;
 
@@ -80,26 +87,16 @@ public class ServicoService{
 
 	public ServicoListResponse listar() {
 
-        List<Servico> lista = repository.findAll();
+		List<Servico> lista = repository.findAll();
 
-        ServicoListResponse response = new ServicoListResponse();
-       
-        
-        response.setServico(lista);
-        response.statuscode = 200;
-        response.message = "Serviços obtidos com sucesso.";
-        
-        
-        
-        
+		ServicoListResponse response = new ServicoListResponse();
 
-        return response;
-        
-        
-    }
-//
-//
-//	
-//	
+		response.setServico(lista);
+		response.statuscode = 200;
+		response.message = "Serviços obtidos com sucesso.";
+
+		return response;
+
+	}
 
 }

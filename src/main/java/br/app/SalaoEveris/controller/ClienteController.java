@@ -7,20 +7,16 @@ import org.springframework.stereotype.Controller;
 
 import org.springframework.web.bind.annotation.*;
 
-
 import br.app.SalaoEveris.request.ClienteRequest;
 import br.app.SalaoEveris.response.BaseResponse;
 import br.app.SalaoEveris.response.ClienteListResponse;
 import br.app.SalaoEveris.response.ClienteResponse;
 import br.app.SalaoEveris.service.ClienteService;
 
-
 @RestController
 @RequestMapping("/clientes")
 
-
-
-public class ClienteController  extends BaseController {
+public class ClienteController extends BaseController {
 	@Autowired
     private ClienteService service;
 

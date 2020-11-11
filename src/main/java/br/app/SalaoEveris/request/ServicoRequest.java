@@ -4,9 +4,6 @@ public class ServicoRequest {
 
 	private String nome;
 	private double valor;
-	
-	
-	
 
 	public String getNome() {
 		return nome;

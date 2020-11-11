@@ -69,27 +69,4 @@ public class AgendamentoService {
 		base.statuscode = 201;
 		return base;
 	}
-	
-	
-
-
-//	public ListAgendamentoResponse relatorio(Timestamp dataInicio, Timestamp dataFim) {
-//
-//		Calendar dtInicio = Calendar.getInstance();
-//		dtInicio.setTime(dataInicio);
-//
-//		Calendar dtFim = Calendar.getInstance();
-//		dtFim.setTime(dataFim);
-//
-//		ListAgendamentoResponse relatorio = new ListAgendamentoResponse();
-//
-//		relatorio.setRelatorio(arepository.findBuscarAgendamentos(dtInicio, dtFim));
-//		relatorio.statuscode = 200;
-//		relatorio.message = "Estou com sono";
-//
-//		return relatorio;
-//	}
-
 }
-
-// OBTER RELATORIO

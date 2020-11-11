@@ -12,11 +12,9 @@ public class ListAgendamentoResponse extends BaseResponse {
 		return relatorio;
 	}
 
-    public void setRelatorio(List<Agendamento> relatorio) {
-    	
-        this.relatorio = relatorio;
-	
-	
+	public void setRelatorio(List<Agendamento> relatorio) {
 
-}
+		this.relatorio = relatorio;
+
+	}
 }

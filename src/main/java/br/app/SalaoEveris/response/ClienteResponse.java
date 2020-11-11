@@ -33,7 +33,6 @@ public class ClienteResponse extends BaseResponse {
 		this.telefone = telefone;
 	}
 
-	
 	public String getEndereco() {
 		return endereco;
 	}

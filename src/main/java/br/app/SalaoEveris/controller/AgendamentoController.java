@@ -24,10 +24,6 @@ public class AgendamentoController extends BaseController {
 	@Autowired
 	private AgendamentoService service;
 
-	
-	
-	
-	
 	@PostMapping
 	public ResponseEntity inserir(@RequestBody AgendamentoRequest request) {
 		try {
@@ -38,21 +34,5 @@ public class AgendamentoController extends BaseController {
 		}
 
 	}
-	
-	
-	
-}
 
-//
-//@GetMapping(path = "/{dataInicio},{dataFim}")
-//public ResponseEntity<BaseResponse> relatorio(@PathVariable Timestamp dataInicio,@PathVariable Timestamp dataFim){
-//	try {
-//		ListAgendamentoResponse response= service.relatorio(dataInicio, dataFim);
-//		return ResponseEntity.status(response.statuscode).body(response);
-//	}
-//	catch(Exception e) {
-//		return ResponseEntity.status(errorBase.statuscode).body(errorBase);
-//	}
-//	
-//}
-//}
+}
