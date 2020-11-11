@@ -1,5 +1,7 @@
 package br.app.SalaoEveris.controller;
 
+import java.sql.Timestamp;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,7 +12,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.app.SalaoEveris.request.AgendamentoRequest;
+import br.app.SalaoEveris.response.AgendamentoResponse;
 import br.app.SalaoEveris.response.BaseResponse;
+import br.app.SalaoEveris.response.ClienteResponse;
+import br.app.SalaoEveris.response.ListAgendamentoResponse;
 import br.app.SalaoEveris.service.AgendamentoService;
 
 @RestController
@@ -19,6 +24,10 @@ public class AgendamentoController extends BaseController {
 	@Autowired
 	private AgendamentoService service;
 
+	
+	
+	
+	
 	@PostMapping
 	public ResponseEntity inserir(@RequestBody AgendamentoRequest request) {
 		try {
@@ -29,16 +38,21 @@ public class AgendamentoController extends BaseController {
 		}
 
 	}
+	
+	
+	
 }
 
-//	@GetMapping(path = "/{dataInicio},{dataFim}")
-//	public ResponseEntity obter(@PathVariable Long id) {
-//		try {
-//			BaseResponse response = service.relatorio(dataInicio, dataFim);
-//			return ResponseEntity.status(response.statuscode).body(response);
-//		} catch (Exception e) {
-//			return ResponseEntity.status(errorBase.statuscode).body(errorBase);
-//		}
-//	}
 //
+//@GetMapping(path = "/{dataInicio},{dataFim}")
+//public ResponseEntity<BaseResponse> relatorio(@PathVariable Timestamp dataInicio,@PathVariable Timestamp dataFim){
+//	try {
+//		ListAgendamentoResponse response= service.relatorio(dataInicio, dataFim);
+//		return ResponseEntity.status(response.statuscode).body(response);
+//	}
+//	catch(Exception e) {
+//		return ResponseEntity.status(errorBase.statuscode).body(errorBase);
+//	}
+//	
+//}
 //}

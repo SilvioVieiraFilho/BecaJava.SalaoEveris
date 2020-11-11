@@ -39,7 +39,7 @@ public class ServicoService{
 		repository.save(servico);
 
 		base.statuscode = 201;
-		base.message = "Cliente cadastrado.";
+		base.message = "Serviço nao  cadastrado.";
 
 		return base;
 
@@ -87,7 +87,7 @@ public class ServicoService{
         
         response.setServico(lista);
         response.statuscode = 200;
-        response.message = "Clientes obtidos com sucesso.";
+        response.message = "Serviços obtidos com sucesso.";
         
         
         

@@ -14,7 +14,7 @@ import br.app.SalaoEveris.request.ClienteRequest;
 import br.app.SalaoEveris.response.*;
 
 @Service
-public class ClienteService{
+public class ClienteService {
 
 	@Autowired
 
@@ -23,10 +23,9 @@ public class ClienteService{
 	public BaseResponse inserir(ClienteRequest request) {
 
 		Cliente cliente = new Cliente();
-		
+
 		BaseResponse base = new BaseResponse();
-		
-		
+
 		base.statuscode = 400;
 
 		if (request.getCpf() == "") {
@@ -51,21 +50,17 @@ public class ClienteService{
 		if (request.getEndereco() == "") {
 
 			base.message = "Erro endereco vazio tente novamente";
-    }
+		}
 
 		cliente.setNome(request.getNome());
 		cliente.setCpf(request.getCpf());
 		cliente.setEndereco(request.getEndereco());
 		cliente.setTelefone(request.getTelefone());
-		
-		
-		
-		
+
 		repository.save(cliente);
 
 		base.statuscode = 201;
 		base.message = "Cliente cadastrado.";
-
 
 		return base;
 	}
@@ -98,63 +93,41 @@ public class ClienteService{
 		response.setNome(cliente.get().getNome());
 		response.setEndereco(cliente.get().getEndereco());
 		response.setTelefone(cliente.get().getTelefone());
+
 		response.message = "Cliente obtido.";
 		response.statuscode = 200;
 
 		return response;
 	}
 
-
-	
 	public ClienteListResponse listar() {
 
-        List<Cliente> lista = repository.findAll();
-       
-            List<ClienteResponse> listaderesposta = new ArrayList<ClienteResponse>();
+		List<Cliente> lista = repository.findAll();
 
-            ClienteListResponse response = new  ClienteListResponse();
-            ClienteResponse cliente = new ClienteResponse();
+		List<ClienteResponse> listaderesposta = new ArrayList<ClienteResponse>();
 
-            for(Cliente c: lista) {
-            	
-            	
-                cliente = new ClienteResponse();
-                cliente.setId(c.getId());
-                cliente.setEndereco(c.getEndereco());
-                cliente.setTelefone(c.getTelefone());
-                cliente.setNome(c.getNome());
-                
-                listaderesposta.add(cliente);
-            
-            }
-            
-          
-           response.setClientes(listaderesposta);
-           
-           
-        
-           
-        response.statuscode = 200;
-        response.message = "Clientes obtidos com sucesso.";
+		ClienteListResponse response = new ClienteListResponse();
+		ClienteResponse cliente = new ClienteResponse();
 
-        return response;
-    }
+		for (Cliente c : lista) {
 
+			cliente = new ClienteResponse();
+
+			cliente.setEndereco(c.getEndereco());
+			cliente.setTelefone(c.getTelefone());
+			cliente.setNome(c.getNome());
+			listaderesposta.remove(c.getId());
+
+			listaderesposta.add(cliente);
+
+		}
+
+		response.setClientes(listaderesposta);
+
+		response.statuscode = 200;
+		response.message = "Clientes obtidos com sucesso.";
+
+		return response;
+	}
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

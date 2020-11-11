@@ -1,6 +1,7 @@
 package br.app.SalaoEveris.service;
 
 import java.sql.Timestamp;
+import java.text.DateFormat;
 import java.util.Calendar;
 import java.util.List;
 import java.util.Optional;
@@ -16,7 +17,9 @@ import br.app.SalaoEveris.repository.ClienteRepository;
 import br.app.SalaoEveris.repository.ServicoRepository;
 import br.app.SalaoEveris.request.AgendamentoRequest;
 import br.app.SalaoEveris.request.ServicoRequest;
+import br.app.SalaoEveris.response.AgendamentoResponse;
 import br.app.SalaoEveris.response.BaseResponse;
+import br.app.SalaoEveris.response.ClienteResponse;
 import br.app.SalaoEveris.response.ListAgendamentoResponse;
 import br.app.SalaoEveris.response.ServicoListResponse;
 
@@ -34,10 +37,6 @@ public class AgendamentoService {
 	private AgendamentoRepository arepository;
 
 	public BaseResponse inserir(AgendamentoRequest request) {
-
-//		Cliente clientel = _crepository.findByid(request.getServico().getId());
-//
-//		Optional<Servico> servicolista = _repository.findById(request.getServico().getId());
 
 		Cliente cliente = new Cliente();
 		Servico servico = new Servico();
@@ -60,11 +59,9 @@ public class AgendamentoService {
 		}
 
 		agendamento.setData(request.getData());
+
 		agendamento.setCliente(request.getCliente());
 		agendamento.setServico(request.getServico());
-
-		// operacao.setValor(operacaoSpec.getValor());
-		// operacao.setTipo(operacaoSpec.getTipo());
 
 		repository.save(agendamento);
 
@@ -72,6 +69,9 @@ public class AgendamentoService {
 		base.statuscode = 201;
 		return base;
 	}
+	
+	
+
 
 //	public ListAgendamentoResponse relatorio(Timestamp dataInicio, Timestamp dataFim) {
 //

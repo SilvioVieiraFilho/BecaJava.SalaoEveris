@@ -31,8 +31,6 @@ public class Agendamento {
 		this.id = id;
 	}
 
-	
-
 	public Date getData() {
 		return data;
 	}
