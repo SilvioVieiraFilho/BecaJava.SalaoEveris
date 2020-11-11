@@ -35,14 +35,15 @@ public class AgendamentoService {
 
 	public BaseResponse inserir(AgendamentoRequest request) {
 
-		Cliente clientel = _crepository.findByid(request.getServico().getId());
-
-		Optional<Servico> servicolista = _repository.findById(request.getServico().getId());
+//		Cliente clientel = _crepository.findByid(request.getServico().getId());
+//
+//		Optional<Servico> servicolista = _repository.findById(request.getServico().getId());
 
 		Cliente cliente = new Cliente();
 		Servico servico = new Servico();
 
 		Agendamento agendamento = new Agendamento();
+
 		BaseResponse base = new BaseResponse();
 
 		if (request.getData() == null) {
@@ -58,15 +59,9 @@ public class AgendamentoService {
 
 		}
 
-//        agendamento.setData(new Date(System.currentTimeMillis()));
-
-		clientel.setId(cliente.getId());
-
-		servicolista.get().setId(servico.getId());
-
 		agendamento.setData(request.getData());
-
-		agendamento.setCliente(cliente);
+		agendamento.setCliente(request.getCliente());
+		agendamento.setServico(request.getServico());
 
 		// operacao.setValor(operacaoSpec.getValor());
 		// operacao.setTipo(operacaoSpec.getTipo());

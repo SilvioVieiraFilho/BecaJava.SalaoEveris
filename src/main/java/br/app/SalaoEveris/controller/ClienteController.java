@@ -2,6 +2,7 @@ package br.app.SalaoEveris.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+
 import org.springframework.stereotype.Controller;
 
 import org.springframework.web.bind.annotation.*;
@@ -46,6 +47,7 @@ public class ClienteController  extends BaseController {
     }
 
     @GetMapping
+//    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity listar() {
         try {
             ClienteListResponse response = service.listar();

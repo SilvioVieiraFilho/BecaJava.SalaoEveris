@@ -1,6 +1,7 @@
 package br.app.SalaoEveris.response;
 
 import java.util.Calendar;
+import java.util.Date;
 
 import br.app.SalaoEveris.model.Cliente;
 import br.app.SalaoEveris.model.Servico;
@@ -11,7 +12,7 @@ public class AgendamentoResponse extends BaseResponse{
 	Long  id;
 	
 	
-	private Calendar data;
+	private Date data;
 	
 	private Servico servico;
 	
@@ -27,11 +28,11 @@ public class AgendamentoResponse extends BaseResponse{
 		this.id = id;
 	}
 
-	public Calendar getData() {
+	public Date getData() {
 		return data;
 	}
 
-	public void setData(Calendar data) {
+	public void setData(Date data) {
 		this.data = data;
 	}
 
